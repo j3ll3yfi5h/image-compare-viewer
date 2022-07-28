@@ -1,6 +1,6 @@
 // uncomment for packing
 // import "../styles/index.scss";
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+// import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 class ImageCompare {
   constructor(el, settings = {}) {
@@ -64,8 +64,8 @@ class ImageCompare {
     // Desktop events
     this.el.addEventListener("mousedown", (ev) => {
       this._activate(true);
-      document.body.classList.add("icv__body");
-      disableBodyScroll(this.el, {reserveScrollBarGap: true});
+      // document.body.classList.add("icv__body");
+      // disableBodyScroll(this.el, {reserveScrollBarGap: true});
       this._slideCompare(ev);
     });
     this.el.addEventListener(
@@ -75,8 +75,8 @@ class ImageCompare {
 
     this.el.addEventListener("mouseup", () => this._activate(false));
     document.body.addEventListener("mouseup", () => {
-      document.body.classList.remove("icv__body");
-      enableBodyScroll(this.el);
+      // document.body.classList.remove("icv__body");
+      // enableBodyScroll(this.el);
       this._activate(false);
     });
 
@@ -84,8 +84,8 @@ class ImageCompare {
 
     this.control.addEventListener("touchstart", (e) => {
       this._activate(true);
-      document.body.classList.add("icv__body");
-      disableBodyScroll(this.el, {reserveScrollBarGap: true});
+      // document.body.classList.add("icv__body");
+      // disableBodyScroll(this.el, {reserveScrollBarGap: true});
     });
 
     this.el.addEventListener("touchmove", (ev) => {
@@ -93,8 +93,8 @@ class ImageCompare {
     });
     this.el.addEventListener("touchend", () => {
       this._activate(false);
-      document.body.classList.remove("icv__body");
-      enableBodyScroll(this.el);
+      // document.body.classList.remove("icv__body");
+      // enableBodyScroll(this.el);
     });
 
     // hover
